@@ -58,7 +58,37 @@
             <td>Boosts our health</td>
             <td>2hrs</td>
            </tr>
-        </table>
+           </table>
+           <hr>
+           <h2>Code Display</h2>
+           <blockquote>
+            <p>How to compare user input with local storage and update DOM whilst searching?</p>
+           </blockquote>
+           <a href="https://stackoverflow.com/questions/77073759/how-to-compare-user-input-with-local-storage-and-update-dom-whilst-searching">source code from stackoverflow</a>
+           <pre>
+            ```
+            <?php
+	function php_split_js_make_email($phpemail)
+	{
+		$pieces = explode("@", $phpemail);
+	
+		echo '
+			<script type="text/javascript">
+				var a = "<a href=\'mailto:";
+				var b = "' . $pieces[0] . '";
+				var c = "' . $pieces[1] .'";
+				var d = "\' class=\'email\'>";
+				var e = "</a>";
+				document.write(a+b+"@"+c+d+b+"@"+c+e);
+			</script>
+			<noscript>Please enable JavaScript to view emails</noscript>
+		';
+	}
+?>
+```
+<a href="https://css-tricks.com/snippets/php/email-protector/">click link for code snippet</a>
+
+           </pre>
 </body>
     
 </html>
