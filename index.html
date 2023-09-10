@@ -1,95 +1,136 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <title>MyDescription</title>
 </head>
+
 <body>
     <h1>Partha Sarathy Boda</h1>
     <h2>My favourite vacation spot</h2>
-    <p>I <strong>love to</strong> spend my <strong>vacation</strong> in <strong>Hyderabad</strong> 
-        because it has many places to visit like <strong>charminar</strong> and many museums like <strong>salarjung museum</strong></p>
-    
-        <h2>Activities at my favourite vacation spot</h2>
+    <p>I <strong>love to</strong> spend my <strong>vacation</strong> in <strong>Hyderabad</strong>
+        because it has many places to visit like <strong>charminar</strong> and many museums like <strong>salarjung
+            museum</strong></p>
 
-        <hr>
+    <h2>Activities at my favourite vacation spot</h2>
 
-        <ol>
-            <li><b>charminar</b> : It is one of the iconic monument and not only it has rich history but also its tourist attraction</li>
-            <li><b>salarjung museum</b> : It is one of the oldest museum which is located in Hyderabad and it contains many oldest monuments</li>
-            <li><b>wonderla</b> : It is water ride park which is in hyderabad and children love to come here and play</li>
-        </ol>
+    <hr>
 
-        <h2>Dishes I like at my favourite vacation spot</h2>
+    <ol>
+        <li><b>charminar</b> : It is one of the iconic monument and not only it has rich history but also its tourist
+            attraction</li>
+        <li><b>salarjung museum</b> : It is one of the oldest museum which is located in Hyderabad and it contains many
+            oldest monuments</li>
+        <li><b>wonderla</b> : It is water ride park which is in hyderabad and children love to come here and play</li>
+    </ol>
 
-        <ul>
-            <li>Hyderabd biryani</li>
-            <li>Qubani ka meeta</li>
-            <li>osmania biscuits</li>
-        </ul>
-        For knowing more about me please click <a href="mystats.html">My personal information</a>
+    <h2>Dishes I like at my favourite vacation spot</h2>
 
-        <hr>
-        <h1>Recommending 4 sports</h1>
-        <p>I am Recommending these 4 sports because each sport has its own advantages which will Improves health</p>
-        <table border="2">
-            <tr>
-                <th>Name of the sport</th>
-                <th>Why I Recommend it</th>
-                <th>Total hours in a week</th>
-            </tr>
-            <tr>
-                <td>1.cricket</td>
-                <td>For healthy lifestyle</td>
-                <td>2hrs</td>
-           </tr>
-           <tr>
+    <ul>
+        <li>Hyderabd biryani</li>
+        <li>Qubani ka meeta</li>
+        <li>osmania biscuits</li>
+    </ul>
+    For knowing more about me please click <a href="mystats.html">My personal information</a>
+
+    <hr>
+    <h1>Recommending 4 sports</h1>
+    <p>I am Recommending these 4 sports because each sport has its own advantages which will Improves health</p>
+    <table border="2">
+        <tr>
+            <th>Name of the sport</th>
+            <th>Why I Recommend it</th>
+            <th>Total hours in a week</th>
+        </tr>
+        <tr>
+            <td>1.cricket</td>
+            <td>For healthy lifestyle</td>
+            <td>2hrs</td>
+        </tr>
+        <tr>
             <td>2.swimming</td>
             <td>For full body workout</td>
             <td>1hr</td>
-           </tr>
-           <tr>
+        </tr>
+        <tr>
             <td>3.Carroms</td>
             <td>Improves concentration</td>
             <td>2hrs</td>
-           </tr>
-           <tr>
+        </tr>
+        <tr>
             <td>4.Batmintton</td>
             <td>Boosts our health</td>
             <td>2hrs</td>
-           </tr>
-           </table>
-           <hr>
-           <h2>Code Display</h2>
-           <blockquote>
-            <p>How to compare user input with local storage and update DOM whilst searching?</p>
-           </blockquote>
-           <a href="https://stackoverflow.com/questions/77073759/how-to-compare-user-input-with-local-storage-and-update-dom-whilst-searching">source code from stackoverflow</a>
-           <pre>
-            <code>
-            <?php
-	function php_split_js_make_email($phpemail)
-	{
-		$pieces = explode("@", $phpemail);
-	
-		echo '
-			<script type="text/javascript">
-				var a = "<a href=\'mailto:";
-				var b = "' . $pieces[0] . '";
-				var c = "' . $pieces[1] .'";
-				var d = "\' class=\'email\'>";
-				var e = "</a>";
-				document.write(a+b+"@"+c+d+b+"@"+c+e);
-			</script>
-			<noscript>Please enable JavaScript to view emails</noscript>
-		';
-	}
-?>
-            </code>
-</pre>
+        </tr>
+    </table>
+    <hr>
+    <h2>Code Display</h2>
+    <blockquote>
+        <p>How to compare user input with local storage and update DOM whilst searching?</p>
+    </blockquote>
+    <a
+        href="https://stackoverflow.com/questions/77073759/how-to-compare-user-input-with-local-storage-and-update-dom-whilst-searching">source
+        code from stackoverflow</a>
 
-<a href="https://css-tricks.com/snippets/php/email-protector/">click link for code snippet</a>
+    <pre>
+        // function to escape data and strip tags
+function safestrip($string){
+       $string = strip_tags($string);
+       $string = mysql_real_escape_string($string);
+       return $string;
+}
+
+//function to show any messages
+function messages() {
+   $message = '';
+   if($_SESSION['success'] != '') {
+       $message = '<span class="success" id="message">'.$_SESSION['success'].'</span>';
+       $_SESSION['success'] = '';
+   }
+   if($_SESSION['error'] != '') {
+       $message = '<span class="error" id="message">'.$_SESSION['error'].'</span>';
+       $_SESSION['error'] = '';
+   }
+   return $message;
+}
+
+// log user in function
+function login($username, $password){
+
+ //call safestrip function
+ $user = safestrip($username);
+ $pass = safestrip($password);
+
+ //convert password to md5
+ $pass = md5($pass);
+
+  // check if the user id and password combination exist in database
+  $sql = mysql_query("SELECT * FROM table WHERE username = '$user' AND password = '$pass'")or die(mysql_error());
+
+  //if match is equal to 1 there is a match
+  if (mysql_num_rows($sql) == 1) {
+
+                          //set session
+                          $_SESSION['authorized'] = true;
+
+                          // reload the page
+                         $_SESSION['success'] = 'Login Successful';
+                         header('Location: ./index.php');
+                         exit;
+
+
+   } else {
+               // login failed save error to a session
+               $_SESSION['error'] = 'Sorry, wrong username or password';
+  }
+}
+    </pre>
+
+    <a href="https://css-tricks.com/snippets/php/login-function/">click link for code snippet</a>
 
 </body>
-    
+
 </html>
+
+
